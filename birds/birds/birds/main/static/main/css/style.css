@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "Rubik";
+    src: url('../fonts/Rubik.ttf');
+}
+
+@font-face {
+    font-family: "Bals";
+    src: url('../fonts/BalsamiqSans-Regular.ttf');
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #A3B7FF;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    height: 160px;
+}
+
+.header__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.logo {
+    /* transform: scale(1.5); */
+    margin: 0 20px;
+    justify-self: center;
+}
+
+.title {
+    font-family: "Rubik";
+    line-height: 120%;
+    font-size: 9rem;
+    color: white;
+    justify-self: center;
+    font-weight: 300;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.bird-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1150px;
+    padding-top: 20px;
+}
+
+
+.bird {
+    width: 90%;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image_bird {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    height:250px;
+}
+
+.contanier_image {
+    margin: 20px;
+    width: 90%;
+    border-radius: 15px;
+}
+
+.bird_name {
+    font-family: "Bals";
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.bird-info {
+    padding: 2%;
+    padding-bottom: 15px;
+}
+
+.more-info {
+    background-color: #A3B7FF;
+    border: none;
+    color: white;
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 2.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100px;
+    margin: 10px auto;
+    font-family: 'Rubik';
+    font-weight: 200;
+}
+
+.more-info:hover {
+    background-color: white ;
+    color: #A3B7FF; 
+    transition:0.5s;
+}
+
+.more-info:active {
+    background-color: white ;
+    color: #A3B7FF; 
+    box-shadow: inset -3px -5px 0;
+    transition:0.3s;
+}
+
+
+.audio {
+    width: 100%;
+}
+
+.bird-info{
+    width:90%;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        height: 80px;
+    }
+
+    .header__wrapper {
+        align-items: center;
+    }
+
+    .logo{
+        margin:0;
+    }
+
+    .image_bird{
+        max-height: 180px;
+    }
+
+    .bird-info{
+        width:80%;
+    }
+
+    .bird_name {
+        font-size: 2rem;
+        margin: 5px;
+    }
+
+    .audio{
+        height:35px;
+    }
+
+    .more-info {
+        margin: 0 auto;
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 3.6rem;
+    }
+
+    .logo {
+        transform: scale(0.7);
+    }
+}

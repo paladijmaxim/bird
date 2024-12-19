@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Царство пернатых</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/reseter.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="header__wrapper">
+            <img class="logo" src="{% static 'main/img/logo1.svg' %}" alt="logo">
+
+            <h1 class='title'>Птичий Дом</h1>
+        </div>
+    </header>
+    <main>
+        <div class="bird-container">
+
+            {% if items %}
+            {% for item in items %}
+            <div class="bird">
+                <div class='contanier_image'>
+                    <img class='image_bird' src="{{ item.photo.url }}" alt="птица">
+                </div>
+                <div class="bird-info">
+                    <p class='bird_name'>{{ item.title }}</p>
+                    <div class="player">
+                        <audio class="audio"  controls>
+                            <source src="{{ item.audio.url }}" type="{{ item.audio.file.content_type }}">
+                        </audio>
+                    </div>
+                    <a href='{{ item.link }}' class="more-info">О птице</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No multimedia items available.</p>
+            {% endif %}
+        </div>
+    </main>
+</body>
+
+</html>
